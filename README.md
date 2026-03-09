@@ -1,22 +1,22 @@
 # Antigravity Remote Extension
 
-Tien ich dieu khien Antigravity tu xa qua mang LAN.
+Tiện ích điều khiển Antigravity từ xa qua mạng LAN.
 
-Tac gia: Nguyen Le Truong
+Tác giả: Nguyễn Lê Trường
 
-## Tinh nang
+## Tính năng
 
-- Chay relay server noi bo (`HTTP + WebSocket`) trong extension host
+- Chạy relay server nội bộ (`HTTP + WebSocket`) trong extension host
 - Dashboard web tren mobile de:
-  - Gui prompt
+  - Gửi prompt
   - Accept/reject agent step
   - Accept/reject terminal command
-  - Chuyen session dang hoat dong
-- Giam sat session realtime qua `antigravity-sdk`
-- Pair bang URL token + lenh hien thi QR
-- Chi bao trang thai tren status bar (`AG Remote: on/off/error`)
+  - Chuyển session đang hoạt động
+- Giám sát session realtime qua `antigravity-sdk`
+- Pair bằng URL token + lệnh hiển thị QR
+- Chỉ báo trạng thái trên status bar (`AG Remote: on/off/error`)
 
-## Lenh
+## Lệnh
 
 - `Antigravity Remote: Start Relay`
 - `Antigravity Remote: Stop Relay`
@@ -24,48 +24,48 @@ Tac gia: Nguyen Le Truong
 - `Antigravity Remote: Show Pairing QR`
 - `Antigravity Remote: Reset Pairing Token`
 
-## Cai dat
+## Cài đặt
 
-- `antigravityRemote.host` (mac dinh `0.0.0.0`)
-- `antigravityRemote.port` (mac dinh `4317`)
-- `antigravityRemote.autoStart` (mac dinh `true`)
+- `antigravityRemote.host` (mặc định `0.0.0.0`)
+- `antigravityRemote.port` (mặc định `4317`)
+- `antigravityRemote.autoStart` (mặc định `true`)
 
-## Phat trien
+## Phát triển
 
 ```bash
 npm install
 npm run build
 ```
 
-Chay extension trong Extension Development Host:
+Chạy extension trong Extension Development Host:
 
-1. Mo thu muc nay bang Antigravity/VS Code
-2. Nhan `F5` (dung `.vscode/launch.json`)
-3. Trong host window, chay `Antigravity Remote: Start Relay`
-4. Chay `Antigravity Remote: Show Pairing QR` hoac `Show Connect Info`
+1. Mở thư mục này bằng Antigravity/VS Code
+2. Nhấn `F5` (dùng `.vscode/launch.json`)
+3. Trong host window, chạy `Antigravity Remote: Start Relay`
+4. Chạy `Antigravity Remote: Show Pairing QR` hoặc `Show Connect Info`
 
-## Dong goi VSIX
+## Đóng gói VSIX
 
 ```bash
 npm run package
 ```
 
-Sau do cai file `.vsix` duoc tao vao Antigravity/VS Code.
+Sau đó cài file `.vsix` được tạo vào Antigravity/VS Code.
 
-## Tai VSIX
+## Tải VSIX
 
-- Ban moi nhat: `antigravity-remote-mvp-0.0.34.vsix`
-- Link tai truc tiep:
+- Bản mới nhất: `antigravity-remote-mvp-0.0.34.vsix`
+- Link tải trực tiếp:
   `https://github.com/niitbeo/antigravity-remote-lan/raw/main/antigravity-remote-mvp-0.0.34.vsix`
 
-## Bao mat
+## Bảo mật
 
-- Relay dinh huong LAN va duoc gate bang token
-- Co the reset token bat ky luc nao bang lenh `Reset Pairing Token`
-- Chi dung trong mang Wi-Fi tin cay
+- Relay định hướng LAN và được gate bằng token
+- Có thể reset token bất kỳ lúc nào bằng lệnh `Reset Pairing Token`
+- Chỉ dùng trong mạng Wi-Fi tin cậy
 
-## Gioi han hien tai
+## Giới hạn hiện tại
 
-- Chua co push notification
-- Chua co queued approval inbox UI
-- Chua co audit history luu lau dai
+- Chưa có push notification
+- Chưa có queued approval inbox UI
+- Chưa có audit history lưu lâu dài
