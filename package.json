@@ -1,0 +1,90 @@
+{
+  "name": "antigravity-remote-mvp",
+  "displayName": "Antigravity Remote",
+  "description": "Tien ich dieu khien Antigravity tu xa qua LAN",
+  "author": "Nguyen Le Truong",
+  "version": "0.0.34",
+  "publisher": "local",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/antigravity-remote-extension"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:antigravityRemote.startRelay",
+    "onCommand:antigravityRemote.stopRelay",
+    "onCommand:antigravityRemote.showConnectInfo",
+    "onCommand:antigravityRemote.showPairingQr",
+    "onCommand:antigravityRemote.resetToken"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "antigravityRemote.startRelay",
+        "title": "Antigravity Remote: Start Relay"
+      },
+      {
+        "command": "antigravityRemote.stopRelay",
+        "title": "Antigravity Remote: Stop Relay"
+      },
+      {
+        "command": "antigravityRemote.showConnectInfo",
+        "title": "Antigravity Remote: Show Connect Info"
+      },
+      {
+        "command": "antigravityRemote.showPairingQr",
+        "title": "Antigravity Remote: Show Pairing QR"
+      },
+      {
+        "command": "antigravityRemote.resetToken",
+        "title": "Antigravity Remote: Reset Pairing Token"
+      }
+    ],
+    "configuration": {
+      "title": "Antigravity Remote",
+      "properties": {
+        "antigravityRemote.host": {
+          "type": "string",
+          "default": "0.0.0.0",
+          "description": "Relay bind host"
+        },
+        "antigravityRemote.port": {
+          "type": "number",
+          "default": 4317,
+          "description": "Relay bind port"
+        },
+        "antigravityRemote.autoStart": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-start relay when extension activates"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "package": "npm run build && vsce package"
+  },
+  "dependencies": {
+    "antigravity-sdk": "^1.6.0",
+    "qrcode": "^1.5.4",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.5",
+    "@types/node": "^20.17.24",
+    "@types/vscode": "^1.85.0",
+    "@types/ws": "^8.5.14",
+    "@vscode/vsce": "^3.2.2",
+    "typescript": "^5.8.2"
+  }
+}
